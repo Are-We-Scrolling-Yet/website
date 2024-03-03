@@ -8,5 +8,64 @@
 <body>
     <h1>Are we scrolling yet?</h1>
     <h2>Almost!</h2>
+    <p>This site will cover the scrolling and touchpad experience on Linux systems.</p>
+
+    <h3>What's working</h3>
+    <ul>
+        <li>
+            <h4>DE Touchpad Gestures</h4>
+            Touchpad gestures are supported in GNOME and KDE.
+        </li>
+        <li>
+            <h4>Kinetic scrolling</h4>
+            Kinetic/inertial/momentum scrolling on touchpads.
+            <ul>
+                <li>GTK4: Yes</li>
+                <li>GTK3: Yes, but scrolling is too fast.</li>
+                <li>Qt5/6: Yes on touch screens (https://bugs.kde.org/show_bug.cgi?id=456383)</li>
+                <li>Electron: Yes, needs a special flag, and is too fast, like GTK3.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>Interpolated scrolling</h4>
+            Interpolated (smooth) scrolling on mouse wheels.
+            <ul>
+                <li>GTK4: No</li>
+                <li>GTK3: No</li>
+                <li>Qt5/6: Yes</li>
+                <li>Electron: Yes</li>
+            </ul>
+        </li>
+        <li>
+            <h4>High resolution scroll wheel</h4>
+        </li>
+    </ul>
+
+    <div>
+        <h3>Tips</h3>
+        Special tips to improve your scrolling experience!
+        <h4>Firefox</h4>
+        For the smoothest scrolling experience on Firefox using a touchpad, follow these instructions:
+        <ol>
+            <li>Make sure you are using Wayland and that it is enabled. Starting from Firefox version 121, Wayland is enabled by default. More info on the <a href="https://wiki.archlinux.org/title/firefox#Wayland">Arch Wiki</a>.</li>
+            <li>Type <code>about:config</code> in the address bar and accept the risks.</li>
+            <li>
+                Touchpad scroll speed
+                <ol>
+                    <li>In the search bar, type <code>mousewheel.default.delta_multiplier_</code> and replace the _x, _y and _z value with <code>15</code> (or adjust this number based on your liking).</li>
+                </ol>
+            </li>
+            <li>Mouse scroll speed (if this is not set, the mouse scrolling will be very slow because of the previous setting)
+                <ol>
+                    <li>In the search bar, type <code>mousewheel.min_line_scroll_amount</code> and set it to <code>300</code></li>
+                </ol>
+            </li>
+            <li>Overscroll bounce (similar to MacOS's bounce effect when you reach the end of a page)
+                <ol>
+                    <li>In the search bar, type <code>apz.overscroll.enabled</code> and set it to <code>true</code></li>
+                </ol>
+            </li>
+        </ol>
+    </div>
 </body>
 </html>
